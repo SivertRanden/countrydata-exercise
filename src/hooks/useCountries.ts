@@ -5,7 +5,7 @@ import { Country } from '../types/Country';
 export const useCountries = () => {
   const [countries, setCountries] = useState<Country[]>();
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<unknown>();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getCountries();
@@ -16,9 +16,10 @@ export const useCountries = () => {
     try {
       const countries = await fetchCountries();
       setCountries(countries);
-      setError(false);
+      setError(true);
     } catch (e) {
-      setError(e);
+      console.log(e);
+      setError(true);
     } finally {
       setLoading(false);
     }

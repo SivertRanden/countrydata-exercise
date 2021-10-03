@@ -9,7 +9,7 @@ function App() {
       <h1>Country data</h1>
       {loading && <p>Loading...</p>}
       {countries && JSON.stringify(countries)}
-      {error && JSON.stringify(error)}
+      {error && <p>Error! Something went wrong when fetching the data ☠</p>}
     </div>
   );
 }
