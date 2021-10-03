@@ -16,7 +16,7 @@ export const useCountries = () => {
     try {
       const countries = await fetchCountries();
       setCountries(countries);
-      setError(true);
+      setError(false);
     } catch (e) {
       console.log(e);
       setError(true);
