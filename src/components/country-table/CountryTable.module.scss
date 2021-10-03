@@ -1,0 +1,17 @@
+.table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: initial;
+  text-align: left;
+  border-radius: 0.5rem;
+
+  th,
+  td {
+    padding: 0.5rem;
+    border: 1px solid gray;
+
+    &.alignRight {
+      text-align: right;
+    }
+  }
+}
