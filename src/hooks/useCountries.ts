@@ -15,7 +15,11 @@ export const useCountries = () => {
     setLoading(true);
     try {
       const countries = await fetchCountries();
-      setCountries(countries);
+      // Some countries come without area or population, we filter those away
+      const filteredCountries = countries.filter(
+        ({ area, population }) => area && population
+      );
+      setCountries(filteredCountries);
       setError(false);
     } catch (e) {
       console.log(e);

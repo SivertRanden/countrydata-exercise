@@ -2,13 +2,9 @@ import { useMemo, useState } from 'react';
 import { Country } from '../../types/Country';
 import { Header } from '../../types/Header';
 import { SortState } from '../../types/SortState';
+import { formatArea, formatPopulation } from '../../utils';
 import styles from './CountryTable.module.scss';
-import {
-  formatArea,
-  formatPopulation,
-  getNextSortState,
-  sortCountries,
-} from './utils';
+import { getNextSortState, sortCountries } from './utils';
 
 type CountryTableProps = {
   countries: Country[];
